@@ -16,12 +16,13 @@ import javax.servlet.http.HttpServletRequest;
 @RestController
 @RequestMapping(value = "session/config")
 public class demoController {
+    
     static int i = 0;
     
     //获取完整session
     @RequestMapping(value = "get")
     public String getSession(HttpServletRequest request) {
-        JSONObject content = SessionConfig.getSession(request,false);
+        JSONObject content = SessionConfig.getSession(request);
         if (content != null) {
             JSONObject result = new JSONObject();
             result.put("token", request.getHeader("token"));
@@ -42,7 +43,7 @@ public class demoController {
     //删除session
     @RequestMapping(value = "remove")
     public void removeSessions(HttpServletRequest request) {
-       SessionConfig.removeSession(request);
+        SessionConfig.removeSession(request);
     }
     
     //获取session的某值

@@ -1,6 +1,6 @@
 package com.example.session;
 
-import com.example.filter.FilterConfig;
+import com.example.redis.LettuceConfig;
 import org.apache.catalina.security.SecurityConfig;
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 
@@ -16,6 +16,6 @@ import org.springframework.security.web.context.AbstractSecurityWebApplicationIn
 public class SecurityInitializer extends AbstractSecurityWebApplicationInitializer {
     
     public SecurityInitializer() {
-        super(SecurityConfig.class, FilterConfig.class);
+        super(SecurityConfig.class, LettuceConfig.class);
     }
 }
